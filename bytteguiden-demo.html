@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bytteguiden — Finn ditt beste abonnement</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f0f0d;
+  --paper: #f5f2ec;
+  --cream: #edeae2;
+  --accent: #1a6b3c;
+  --accent-light: #e8f5ee;
+  --accent-mid: #2d9a5c;
+  --warn: #c4520a;
+  --warn-light: #fef3eb;
+  --muted: #6b6960;
+  --border: rgba(15,15,13,0.12);
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(245,242,236,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 clamp(1rem, 5vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--ink); }
+
+.nav-cta {
+  background: var(--ink);
+  color: var(--paper) !important;
+  padding: 8px 18px;
+  border-radius: 99px;
+  font-weight: 500;
+  font-size: 0.85rem !important;
+  transition: opacity 0.2s !important;
+}
+.nav-cta:hover { opacity: 0.8; color: var(--paper) !important; }
+
+/* HERO */
+.hero {
+  padding: clamp(4rem, 10vh, 7rem) clamp(1rem, 5vw, 3rem) 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  nav .nav-links { display: none; }
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 5px 12px;
+  border-radius: 99px;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.03em;
+}
+
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  color: var(--ink);
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--accent);
+  position: relative;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--muted);
+  font-weight: 300;
+  max-width: 400px;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+
+.trust-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.trust-row span { display: flex; align-items: center; gap: 5px; }
+.trust-dot { width: 6px; height: 6px; background: var(--accent-mid); border-radius: 50%; }
+
+/* HERO VISUAL — savings card */
+.hero-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.savings-card {
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.savings-card::before {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 160px; height: 160px;
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0.15;
+}
+.savings-label { font-size: 0.78rem; color: rgba(245,242,236,0.5); margin-bottom: 4px; font-weight: 300; letter-spacing: 0.04em; text-transform: uppercase; }
+.savings-amount { font-family: 'Syne', sans-serif; font-size: 2.8rem; font-weight: 800; color: #6bdc9c; letter-spacing: -0.04em; line-height: 1; }
+.savings-period { font-size: 0.85rem; color: rgba(245,242,236,0.5); margin-top: 4px; }
+.savings-from {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(245,242,236,0.1);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: rgba(245,242,236,0.5);
+}
+.savings-from strong { color: rgba(245,242,236,0.9); }
+
+.mini-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.mini-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+}
+.mini-card-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; }
+.mini-card-val { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; }
+.mini-card-val.green { color: var(--accent); }
+.mini-card-val.orange { color: var(--warn); }
+
+/* QUIZ */
+.quiz-section {
+  background: var(--ink);
+  padding: clamp(3rem, 7vh, 5rem) clamp(1rem, 5vw, 3rem);
+}
+
+.quiz-inner {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.quiz-inner h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--paper);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.quiz-inner > p { font-size: 0.9rem; color: rgba(245,242,236,0.45); margin-bottom: 2rem; }
+
+.quiz-step { display: none; animation: fadeUp 0.35s ease; }
+.quiz-step.active { display: block; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.quiz-q {
+  font-size: 1.05rem;
+  color: rgba(245,242,236,0.8);
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.quiz-opt {
+  background: rgba(245,242,236,0.06);
+  border: 1px solid rgba(245,242,236,0.1);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: rgba(245,242,236,0.7);
+  font-size: 0.9rem;
+  text-align: left;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.quiz-opt:hover {
+  background: rgba(245,242,236,0.1);
+  border-color: rgba(245,242,236,0.25);
+  color: var(--paper);
+}
+
+.quiz-opt.selected {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.quiz-icon { font-size: 1.3rem; display: block; margin-bottom: 4px; }
+
+.quiz-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.quiz-progress {
+  display: flex;
+  gap: 5px;
+}
+.qp-dot {
+  width: 24px; height: 4px;
+  border-radius: 99px;
+  background: rgba(245,242,236,0.15);
+  transition: background 0.3s;
+}
+.qp-dot.done { background: var(--accent-mid); }
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 99px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-primary:hover { background: var(--accent-mid); transform: translateY(-1px); }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+.btn-outline {
+  background: transparent;
+  color: rgba(245,242,236,0.5);
+  border: none;
+  padding: 12px 0;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: color 0.2s;
+}
+.btn-outline:hover { color: var(--paper); }
+
+/* RESULTS */
+.results-section {
+  padding: clamp(3rem, 7vh, 5rem) clamp(1rem, 5vw, 3rem);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.results-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.results-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+}
+
+.filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+  background: white;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--muted);
+  transition: all 0.2s;
+}
+.filter-btn.active {
+  background: var(--ink);
+  color: var(--paper);
+  border-color: var(--ink);
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.plan-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.plan-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(15,15,13,0.1);
+}
+
+.plan-card.best {
+  border-color: var(--accent);
+  border-width: 2px;
+}
+
+.best-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 99px;
+  letter-spacing: 0.03em;
+}
+
+.plan-header {
+  padding: 1.25rem 1.25rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.operator-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.75rem;
+}
+
+.operator-logo {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.plan-name {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+.plan-category {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.plan-price {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: var(--ink);
+}
+.plan-price span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.plan-features { padding: 1rem 1.25rem; }
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--muted);
+  padding: 4px 0;
+}
+
+.feat-check {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.feat-check svg { width: 9px; height: 9px; }
+
+.plan-footer {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.save-pill {
+  font-size: 0.75rem;
+  font-weight: 500;
+  background: var(--accent-light);
+  color: var(--accent);
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+
+.btn-card {
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  padding: 9px 18px;
+  border-radius: 99px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: opacity 0.2s;
+}
+.btn-card:hover { opacity: 0.75; }
+
+/* AFFILIATE DISCLOSURE */
+.disclosure-bar {
+  background: var(--cream);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 10px clamp(1rem, 5vw, 3rem);
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+.disclosure-bar a { color: var(--accent); text-decoration: none; }
+
+/* CALCULATOR SECTION */
+.calc-section {
+  padding: clamp(3rem, 7vh, 5rem) clamp(1rem, 5vw, 3rem);
+  background: var(--cream);
+}
+
+.calc-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.calc-inner h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+.calc-inner > p { font-size: 0.9rem; color: var(--muted); margin-bottom: 2rem; }
+
+.calc-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+}
+
+.calc-field {
+  margin-bottom: 1.5rem;
+}
+.calc-field label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.calc-field select, .calc-field input[type="number"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  background: var(--paper);
+  color: var(--ink);
+  appearance: none;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.calc-field select:focus, .calc-field input[type="number"]:focus {
+  border-color: var(--accent);
+}
+
+.calc-result {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: var(--ink);
+  border-radius: var(--radius-sm);
+  display: none;
+}
+
+.calc-result.visible { display: block; }
+
+.calc-result-label {
+  font-size: 0.78rem;
+  color: rgba(245,242,236,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.calc-result-number {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 2.2rem;
+  color: #6bdc9c;
+  letter-spacing: -0.04em;
+}
+
+.calc-result-sub {
+  font-size: 0.83rem;
+  color: rgba(245,242,236,0.5);
+  margin-top: 4px;
+}
+
+/* CATEGORIES */
+.categories-section {
+  padding: clamp(3rem, 7vh, 5rem) clamp(1rem, 5vw, 3rem);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.categories-section h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.cat-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+}
+.cat-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 16px rgba(26,107,60,0.1);
+  transform: translateY(-2px);
+}
+
+.cat-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+.cat-name { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 1rem; margin-bottom: 4px; }
+.cat-count { font-size: 0.78rem; color: var(--muted); }
+
+/* FOOTER */
+footer {
+  background: var(--ink);
+  color: rgba(245,242,236,0.45);
+  padding: 2.5rem clamp(1rem, 5vw, 3rem);
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  color: var(--paper);
+  font-size: 1rem;
+}
+.affiliate-note {
+  font-size: 0.75rem;
+  max-width: 400px;
+  line-height: 1.5;
+}
+.affiliate-note strong { color: rgba(245,242,236,0.7); }
+
+/* SCROLL REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.reveal.in { opacity: 1; transform: none; }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo"><span class="logo-dot"></span>Bytteguiden</a>
+  <ul class="nav-links">
+    <li><a href="#kategorier">Kategorier</a></li>
+    <li><a href="#planer">Mobilabonnement</a></li>
+    <li><a href="#kalkulator">Sparekalkulator</a></li>
+    <li><a href="#quiz" class="nav-cta">Finn beste deal</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">
+      <span class="trust-dot"></span>
+      Oppdatert mai 2025
+    </div>
+    <h1>Slutt å betale<br>for mye for<br><em>abonnementet</em> ditt</h1>
+    <p class="hero-sub">Vi sammenligner mobilabonnement, strømmetjenester, bredbånd og mer — og finner det beste tilbudet for akkurat deg.</p>
+    <div class="trust-row">
+      <span><span class="trust-dot"></span>Gratis å bruke</span>
+      <span><span class="trust-dot"></span>Ingen skjulte avgifter</span>
+      <span><span class="trust-dot"></span>Åpen om provisjon</span>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="savings-card">
+      <div class="savings-label">Gjennomsnittlig sparing</div>
+      <div class="savings-amount">3 240 kr</div>
+      <div class="savings-period">per år ved å bytte abonnement</div>
+      <div class="savings-from">
+        <span>Sist bytte: <strong>Telenor → Ice</strong></span>
+        <span>Spart: <strong>270 kr/mnd</strong></span>
+      </div>
+    </div>
+    <div class="mini-cards">
+      <div class="mini-card">
+        <div class="mini-card-label">Deals i dag</div>
+        <div class="mini-card-val green">48</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-card-label">Leverandører</div>
+        <div class="mini-card-val">24</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-card-label">Tjenester</div>
+        <div class="mini-card-val">6</div>
+      </div>
+      <div class="mini-card">
+        <div class="mini-card-label">Gj.sn. byttetid</div>
+        <div class="mini-card-val orange">2 min</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLOSURE BAR -->
+<div class="disclosure-bar">
+  <strong>Åpen om affiliate:</strong> Bytteguiden mottar en provisjon når du kjøper via våre lenker — dette påvirker ikke rekkefølgen. <a href="#">Les mer →</a>
+</div>
+
+<!-- QUIZ SECTION -->
+<section class="quiz-section" id="quiz">
+  <div class="quiz-inner">
+    <h2>Finn ditt beste abonnement</h2>
+    <p>3 raske spørsmål — vi gjør resten</p>
+
+    <!-- Step 1 -->
+    <div class="quiz-step active" id="step-1">
+      <p class="quiz-q">Hva vil du sammenligne?</p>
+      <div class="quiz-options" style="grid-template-columns: 1fr 1fr;">
+        <button class="quiz-opt" onclick="selectOpt(this, 'mobil')">
+          <span class="quiz-icon">📱</span>Mobilabonnement
+        </button>
+        <button class="quiz-opt" onclick="selectOpt(this, 'streaming')">
+          <span class="quiz-icon">🎬</span>Strømmetjenester
+        </button>
+        <button class="quiz-opt" onclick="selectOpt(this, 'bredband')">
+          <span class="quiz-icon">🌐</span>Bredbånd
+        </button>
+        <button class="quiz-opt" onclick="selectOpt(this, 'strom')">
+          <span class="quiz-icon">⚡</span>Strøm/el
+        </button>
+      </div>
+      <div class="quiz-nav">
+        <div class="quiz-progress">
+          <div class="qp-dot done"></div>
+          <div class="qp-dot"></div>
+          <div class="qp-dot"></div>
+        </div>
+        <button class="btn-primary" id="next1" onclick="goStep(2)" disabled>Neste →</button>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="quiz-step" id="step-2">
+      <p class="quiz-q">Hva er viktigst for deg?</p>
+      <div class="quiz-options">
+        <button class="quiz-opt" onclick="selectOpt(this, 'pris')">
+          <span class="quiz-icon">💰</span>Lavest pris
+        </button>
+        <button class="quiz-opt" onclick="selectOpt(this, 'data')">
+          <span class="quiz-icon">📶</span>Mest data
+        </button>
+        <button class="quiz-opt" onclick="selectOpt(this, 'dekning')">
+          <span class="quiz-icon">📡</span>Best dekning
+        </button>
+        <button class="quiz-opt" onclick="selectOpt(this, 'flex')">
+          <span class="quiz-icon">🔓</span>Ingen binding
+        </button>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn-outline" onclick="goStep(1)">← Tilbake</button>
+        <div class="quiz-progress">
+          <div class="qp-dot done"></div>
+          <div class="qp-dot done"></div>
+          <div class="qp-dot"></div>
+        </div>
+        <button class="btn-primary" id="next2" onclick="goStep(3)" disabled>Neste →</button>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="quiz-step" id="step-3">
+      <p class="quiz-q">Hva bruker du mest penger på nå?</p>
+      <div class="quiz-options" style="grid-template-columns: 1fr 1fr 1fr;">
+        <button class="quiz-opt" onclick="selectOpt(this, 'u299')">Under 299 kr/mnd</button>
+        <button class="quiz-opt" onclick="selectOpt(this, '300-499')">300–499 kr/mnd</button>
+        <button class="quiz-opt" onclick="selectOpt(this, 'over500')">Over 500 kr/mnd</button>
+      </div>
+      <div class="quiz-nav">
+        <button class="btn-outline" onclick="goStep(2)">← Tilbake</button>
+        <div class="quiz-progress">
+          <div class="qp-dot done"></div>
+          <div class="qp-dot done"></div>
+          <div class="qp-dot done"></div>
+        </div>
+        <button class="btn-primary" id="next3" onclick="showResults()" disabled>Se resultater ✓</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results-section reveal" id="planer">
+  <div class="results-header">
+    <h2>Mobilabonnement — beste tilbud nå</h2>
+    <div class="filter-row">
+      <button class="filter-btn active" onclick="setFilter(this,'all')">Alle</button>
+      <button class="filter-btn" onclick="setFilter(this,'billig')">Under 299 kr</button>
+      <button class="filter-btn" onclick="setFilter(this,'data')">Mye data</button>
+      <button class="filter-btn" onclick="setFilter(this,'ingen-binding')">Ingen binding</button>
+    </div>
+  </div>
+
+  <div class="plans-grid">
+
+    <!-- Ice -->
+    <div class="plan-card best" data-tags="billig ingen-binding">
+      <span class="best-badge">Redaksjonens valg</span>
+      <div class="plan-header">
+        <div class="operator-row">
+          <div class="operator-logo" style="background:#fff0f5;color:#e0004d;font-size:0.65rem">ICE</div>
+          <div>
+            <div class="plan-name">Ice Frihet 20GB</div>
+            <div class="plan-category">Ingen bindingstid</div>
+          </div>
+        </div>
+        <div class="plan-price">249<span> kr/mnd</span></div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          20 GB data
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Fri tale og SMS
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          EU-roaming inkludert
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Ingen bindingstid
+        </div>
+      </div>
+      <div class="plan-footer">
+        <span class="save-pill">Spar opptil 1 800 kr/år</span>
+        <button class="btn-card" onclick="trackClick('ice-frihet')">Bestill →</button>
+      </div>
+    </div>
+
+    <!-- OneCall -->
+    <div class="plan-card" data-tags="billig">
+      <div class="plan-header">
+        <div class="operator-row">
+          <div class="operator-logo" style="background:#f0f4ff;color:#1d3fbb;font-size:0.55rem">1CALL</div>
+          <div>
+            <div class="plan-name">OneCall 15GB</div>
+            <div class="plan-category">Telenor-nett</div>
+          </div>
+        </div>
+        <div class="plan-price">219<span> kr/mnd</span></div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          15 GB data
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Fri tale og SMS
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Telenors dekning
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Ingen binding
+        </div>
+      </div>
+      <div class="plan-footer">
+        <span class="save-pill">Spar 1 680 kr/år</span>
+        <button class="btn-card" onclick="trackClick('onecall-15')">Bestill →</button>
+      </div>
+    </div>
+
+    <!-- Telia -->
+    <div class="plan-card" data-tags="data">
+      <div class="plan-header">
+        <div class="operator-row">
+          <div class="operator-logo" style="background:#fff5eb;color:#c4520a;font-size:0.6rem">TELIA</div>
+          <div>
+            <div class="plan-name">Telia Smart 100GB</div>
+            <div class="plan-category">Mye data, god dekning</div>
+          </div>
+        </div>
+        <div class="plan-price">399<span> kr/mnd</span></div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          100 GB data
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          5G inkludert
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Strømme på flyet
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Familierabatt tilgjengelig
+        </div>
+      </div>
+      <div class="plan-footer">
+        <span class="save-pill" style="background:var(--warn-light);color:var(--warn)">Populær</span>
+        <button class="btn-card" onclick="trackClick('telia-100')">Bestill →</button>
+      </div>
+    </div>
+
+    <!-- Fjordkraft Mobil -->
+    <div class="plan-card" data-tags="billig ingen-binding">
+      <div class="plan-header">
+        <div class="operator-row">
+          <div class="operator-logo" style="background:#eef8f1;color:#1a6b3c;font-size:0.5rem">FJORD</div>
+          <div>
+            <div class="plan-name">Fjordkraft Mobil 10GB</div>
+            <div class="plan-category">Telia-nett</div>
+          </div>
+        </div>
+        <div class="plan-price">199<span> kr/mnd</span></div>
+      </div>
+      <div class="plan-features">
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          10 GB data
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Fri tale og SMS
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Ingen binding
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"><svg viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5l2.5 2.5 4-4" stroke="#1a6b3c" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+          Strøm + mobil = rabatt
+        </div>
+      </div>
+      <div class="plan-footer">
+        <span class="save-pill">Spar 2 040 kr/år</span>
+        <button class="btn-card" onclick="trackClick('fjordkraft-10')">Bestill →</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SPAREKALKULATOR -->
+<section class="calc-section reveal" id="kalkulator">
+  <div class="calc-inner">
+    <h2>Hva kaster du bort per måned?</h2>
+    <p>Tast inn ditt nåværende abonnement og se hva du kan spare ved å bytte.</p>
+    <div class="calc-card">
+      <div class="calc-field">
+        <label>Hva bruker du nå?</label>
+        <select id="calc-cat" onchange="calcUpdate()">
+          <option value="">— Velg kategori —</option>
+          <option value="mobil">Mobilabonnement</option>
+          <option value="streaming">Strømmetjenester</option>
+          <option value="bredband">Bredbånd</option>
+        </select>
+      </div>
+      <div class="calc-field">
+        <label>Hva betaler du per måned? (kr)</label>
+        <input type="number" id="calc-price" min="0" max="2000" step="10" placeholder="f.eks. 499" oninput="calcUpdate()">
+      </div>
+      <div id="calc-result" class="calc-result">
+        <div class="calc-result-label">Du kan spare opptil</div>
+        <div class="calc-result-number" id="calc-num">—</div>
+        <div class="calc-result-sub" id="calc-sub">per år ved å bytte til et bedre alternativ</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KATEGORIER -->
+<section class="categories-section reveal" id="kategorier">
+  <h2>Alle kategorier</h2>
+  <div class="cat-grid">
+    <a href="#planer" class="cat-card">
+      <div class="cat-icon">📱</div>
+      <div class="cat-name">Mobilabonnement</div>
+      <div class="cat-count">14 leverandører</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">🎬</div>
+      <div class="cat-name">Strømmetjenester</div>
+      <div class="cat-count">8 tjenester</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">🌐</div>
+      <div class="cat-name">Bredbånd</div>
+      <div class="cat-count">6 leverandører</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">⚡</div>
+      <div class="cat-name">Strøm/el</div>
+      <div class="cat-count">Kommer snart</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">🏋️</div>
+      <div class="cat-name">Treningsapper</div>
+      <div class="cat-count">Kommer snart</div>
+    </a>
+    <a href="#" class="cat-card">
+      <div class="cat-icon">🔒</div>
+      <div class="cat-name">Forsikring</div>
+      <div class="cat-count">Kommer snart</div>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Bytteguiden</div>
+    <div style="margin-top:6px">© 2025 Bytteguiden AS · Oslo, Norge</div>
+  </div>
+  <div class="affiliate-note">
+    <strong>Affiliate-opplysning:</strong> Vi mottar en provisjon fra leverandørene når du kjøper via våre lenker. Dette finansierer tjenesten vår og påvirker ikke vår uavhengige redaksjonelle vurdering av produktene.
+  </div>
+</footer>
+
+<script>
+// Quiz logic
+let step1Val = null, step2Val = null, step3Val = null;
+
+function selectOpt(btn, val) {
+  const parent = btn.closest('.quiz-options');
+  parent.querySelectorAll('.quiz-opt').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  const step = btn.closest('.quiz-step');
+  if (step.id === 'step-1') { step1Val = val; document.getElementById('next1').disabled = false; }
+  if (step.id === 'step-2') { step2Val = val; document.getElementById('next2').disabled = false; }
+  if (step.id === 'step-3') { step3Val = val; document.getElementById('next3').disabled = false; }
+}
+
+function goStep(n) {
+  document.querySelectorAll('.quiz-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step-' + n).classList.add('active');
+}
+
+function showResults() {
+  document.getElementById('planer').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Filter
+function setFilter(btn, tag) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.plan-card').forEach(card => {
+    if (tag === 'all') { card.style.display = ''; return; }
+    const tags = card.dataset.tags || '';
+    card.style.display = tags.includes(tag) ? '' : 'none';
+  });
+}
+
+// Calculator
+const savings = { mobil: { pct: 0.35, min: 199 }, streaming: { pct: 0.30, min: 69 }, bredband: { pct: 0.25, min: 399 } };
+
+function calcUpdate() {
+  const cat = document.getElementById('calc-cat').value;
+  const price = parseFloat(document.getElementById('calc-price').value);
+  const result = document.getElementById('calc-result');
+  if (!cat || !price || price < 1) { result.classList.remove('visible'); return; }
+  const s = savings[cat];
+  const bestPrice = Math.max(s.min, price * (1 - s.pct));
+  const monthSave = Math.round(price - bestPrice);
+  const yearSave = monthSave * 12;
+  if (monthSave <= 0) { result.classList.remove('visible'); return; }
+  document.getElementById('calc-num').textContent = yearSave.toLocaleString('nb-NO') + ' kr';
+  document.getElementById('calc-sub').textContent = `det vil si ${monthSave} kr spart per måned — ${yearSave} kr i løpet av et år`;
+  result.classList.add('visible');
+}
+
+// Affiliate tracking simulation
+function trackClick(planId) {
+  console.log('[affiliate] click:', planId);
+  alert('I en ekte versjon ville dette åpnet leverandørens side med din affiliate-kode!\n\nPlan: ' + planId);
+}
+
+// Scroll reveal
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viaplay vs TV 2 Play 2025 — Hvilken er best for norsk sport? | Bytteguiden</title>
+<meta name="description" content="Vi sammenligner Viaplay og TV 2 Play for 2025. Pris, innhold, norsk sport, Eliteserie, Premier League — finn ut hvilken strømmetjeneste som er verdt pengene.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f0f0d;
+  --paper: #f5f2ec;
+  --cream: #edeae2;
+  --accent: #1a6b3c;
+  --accent-light: #e8f5ee;
+  --warn: #c4520a;
+  --warn-light: #fef3eb;
+  --muted: #6b6960;
+  --border: rgba(15,15,13,0.11);
+  --radius: 14px;
+  --radius-sm: 8px;
+  --viaplay: #0067b8;
+  --viaplay-light: #e6f0fa;
+  --tv2: #c7401a;
+  --tv2-light: #fdf0eb;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(245,242,236,0.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 clamp(1rem,5vw,3rem);display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;letter-spacing:-0.02em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:7px}
+.logo-dot{width:9px;height:9px;background:var(--accent);border-radius:50%}
+.nav-r{display:flex;align-items:center;gap:1.2rem}
+.nav-r a{font-size:0.85rem;color:var(--muted);text-decoration:none}
+.nav-r a:hover{color:var(--ink)}
+.nav-pill{background:var(--ink);color:var(--paper)!important;padding:7px 16px;border-radius:99px;font-size:0.8rem!important}
+
+/* HERO */
+.hero{padding:clamp(3rem,8vh,5.5rem) clamp(1rem,5vw,3rem) 0;max-width:900px;margin:0 auto;text-align:center}
+.breadcrumb{font-size:0.78rem;color:var(--muted);margin-bottom:1rem}
+.breadcrumb a{color:var(--accent);text-decoration:none}
+.hero-label{display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:500;color:var(--accent);background:var(--accent-light);padding:4px 12px;border-radius:99px;margin-bottom:1rem;letter-spacing:0.03em}
+.hero h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-0.03em;line-height:1.1;margin-bottom:1rem}
+.hero h1 .v{color:var(--viaplay)}.hero h1 .t{color:var(--tv2)}
+.hero-sub{font-size:1rem;color:var(--muted);font-weight:300;max-width:580px;margin:0 auto 2rem;line-height:1.7}
+.updated{font-size:0.75rem;color:var(--muted);margin-bottom:2.5rem}
+
+/* VERDICT BANNER */
+.verdict{background:var(--ink);color:var(--paper);padding:1.5rem clamp(1rem,5vw,3rem);margin:2rem 0 0}
+.verdict-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.5rem}
+@media(max-width:600px){.verdict-inner{grid-template-columns:1fr;text-align:center}}
+.verdict-side{display:flex;flex-direction:column;gap:4px}
+.verdict-name{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;opacity:0.45;font-weight:500}
+.verdict-score{font-family:'Syne',sans-serif;font-weight:800;font-size:2.4rem;letter-spacing:-0.04em;line-height:1}
+.verdict-score.v{color:#6ab0f5}.verdict-score.t{color:#f5a87a}
+.verdict-label{font-size:0.8rem;opacity:0.55;margin-top:2px}
+.verdict-vs{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;opacity:0.3;text-align:center}
+.verdict-winner{text-align:right}
+
+/* CONTENT */
+.content{max-width:900px;margin:0 auto;padding:2.5rem clamp(1rem,5vw,3rem)}
+
+/* QUICK PICKS */
+.quick-picks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:2.5rem}
+@media(max-width:600px){.quick-picks{grid-template-columns:1fr}}
+.qp-card{border-radius:var(--radius);padding:1.25rem;border:1px solid var(--border)}
+.qp-card.viaplay{background:var(--viaplay-light);border-color:rgba(0,103,184,0.2)}
+.qp-card.tv2{background:var(--tv2-light);border-color:rgba(199,64,26,0.2)}
+.qp-tag{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:8px}
+.qp-tag.v{color:var(--viaplay)}.qp-tag.t{color:var(--tv2)}
+.qp-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:4px}
+.qp-body{font-size:0.82rem;color:var(--muted);line-height:1.5}
+
+/* SECTION HEADINGS */
+.section-h{font-family:'Syne',sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:-0.01em;margin:2.5rem 0 1rem;display:flex;align-items:center;gap:10px}
+.section-h::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* COMPARISON TABLE */
+.comp-table{width:100%;border-collapse:collapse;margin-bottom:2rem;font-size:0.88rem}
+.comp-table th{padding:10px 14px;text-align:left;font-weight:500;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);border-bottom:1px solid var(--border)}
+.comp-table th.v{color:var(--viaplay);background:var(--viaplay-light)}
+.comp-table th.t{color:var(--tv2);background:var(--tv2-light)}
+.comp-table td{padding:11px 14px;border-bottom:1px solid var(--border);color:var(--ink);vertical-align:middle}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table tr:hover td{background:rgba(15,15,13,0.02)}
+.comp-table td:first-child{color:var(--muted);font-size:0.82rem;width:200px}
+.win{font-weight:500;display:flex;align-items:center;gap:5px}
+.win::before{content:'✓';color:var(--accent);font-size:0.8rem}
+.lose{color:var(--muted)}
+.neutral{color:var(--ink)}
+
+/* SPORT TABLE */
+.sport-table{width:100%;border-collapse:collapse;margin-bottom:2rem;font-size:0.85rem}
+.sport-table th{padding:9px 12px;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);border-bottom:2px solid var(--border);text-align:center}
+.sport-table th:first-child{text-align:left}
+.sport-table td{padding:10px 12px;border-bottom:1px solid var(--border);text-align:center;vertical-align:middle}
+.sport-table td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.sport-table td:first-child small{display:block;font-weight:400;color:var(--muted);font-size:0.75rem;margin-top:1px}
+.has{color:var(--accent);font-weight:600;font-size:1rem}
+.no{color:#ccc;font-size:1rem}
+.part{color:var(--warn);font-weight:600;font-size:0.8rem}
+
+/* PRICE CARDS */
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:2rem}
+@media(max-width:600px){.price-grid{grid-template-columns:1fr}}
+.price-card{background:white;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.price-card-head{padding:1rem 1.25rem;border-bottom:1px solid var(--border)}
+.price-card-head.v{background:var(--viaplay-light);border-color:rgba(0,103,184,0.15)}
+.price-card-head.t{background:var(--tv2-light);border-color:rgba(199,64,26,0.15)}
+.price-brand{font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+.price-brand.v{color:var(--viaplay)}.price-brand.t{color:var(--tv2)}
+.price-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem}
+.price-amount{font-family:'Syne',sans-serif;font-weight:800;font-size:2rem;letter-spacing:-0.03em;line-height:1.1}
+.price-amount span{font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:400;color:var(--muted)}
+.price-body{padding:1rem 1.25rem}
+.price-feat{display:flex;align-items:flex-start;gap:7px;font-size:0.8rem;color:var(--muted);padding:3px 0}
+.price-feat::before{content:'·';color:var(--border);flex-shrink:0;margin-top:1px}
+.price-footer{padding:0.75rem 1.25rem;border-top:1px solid var(--border);background:var(--paper)}
+.btn-v{display:inline-block;background:var(--viaplay);color:white;border:none;padding:9px 20px;border-radius:99px;font-size:0.82rem;font-weight:500;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;transition:opacity 0.2s}
+.btn-t{display:inline-block;background:var(--tv2);color:white;border:none;padding:9px 20px;border-radius:99px;font-size:0.82rem;font-weight:500;cursor:pointer;text-decoration:none;font-family:'DM Sans',sans-serif;transition:opacity 0.2s}
+.btn-v:hover,.btn-t:hover{opacity:0.8}
+
+/* VERDICT BOXES */
+.verdict-boxes{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:1.5rem 0}
+@media(max-width:600px){.verdict-boxes{grid-template-columns:1fr}}
+.vbox{border-radius:var(--radius-sm);padding:1.1rem;border:1px solid var(--border);background:white}
+.vbox-label{font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:600;margin-bottom:6px}
+.vbox-label.v{color:var(--viaplay)}.vbox-label.t{color:var(--tv2)}
+.vbox-body{font-size:0.83rem;color:var(--muted);line-height:1.5}
+
+/* FINAL VERDICT */
+.final-verdict{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:2rem;margin:2.5rem 0}
+.fv-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.07em;opacity:0.45;margin-bottom:8px}
+.fv-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.4rem;letter-spacing:-0.02em;margin-bottom:1rem}
+.fv-body{font-size:0.88rem;color:rgba(245,242,236,0.65);line-height:1.7;margin-bottom:1.5rem}
+.fv-btns{display:flex;gap:10px;flex-wrap:wrap}
+
+/* DISCLOSURE */
+.disclosure{background:var(--cream);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:10px clamp(1rem,5vw,3rem);text-align:center;font-size:0.76rem;color:var(--muted)}
+.disclosure a{color:var(--accent);text-decoration:none}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border);padding:1rem 0}
+.faq-q{font-weight:500;font-size:0.92rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none}
+.faq-icon{font-size:1rem;color:var(--muted);transition:transform 0.2s;flex-shrink:0}
+.faq-a{font-size:0.85rem;color:var(--muted);line-height:1.6;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.2s}
+.faq-item.open .faq-a{max-height:200px;padding-top:8px}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+
+footer{background:var(--ink);color:rgba(245,242,236,0.4);padding:2rem clamp(1rem,5vw,3rem);font-size:0.78rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Syne',sans-serif;font-weight:800;color:var(--paper);font-size:1rem}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo"><span class="logo-dot"></span>Bytteguiden</a>
+  <div class="nav-r">
+    <a href="index.html">Hjem</a>
+    <a href="index.html#kategorier">Kategorier</a>
+    <a href="index.html#kalkulator">Kalkulator</a>
+    <a href="index.html#quiz" class="nav-pill">Finn beste deal</a>
+  </div>
+</nav>
+
+<div class="disclosure">
+  <strong>Affiliate-opplysning:</strong> Bytteguiden mottar provisjon hvis du kjøper via lenkene våre. Det påvirker ikke vurderingen vår. <a href="#">Les mer →</a>
+</div>
+
+<section class="hero">
+  <div class="breadcrumb"><a href="index.html">Hjem</a> › <a href="#">Strømmetjenester</a> › Viaplay vs TV 2 Play</div>
+  <div class="hero-label">📺 Oppdatert mai 2025</div>
+  <h1>
+    <span class="v">Viaplay</span> vs<br>
+    <span class="t">TV 2 Play</span>
+  </h1>
+  <p class="hero-sub">Hvilken norsk strømmetjeneste er verdt pengene i 2025? Vi har sammenlignet pris, sportsrettigheter, innhold og brukeropplevelse — slik at du slipper.</p>
+  <div class="updated">Sist oppdatert: 12. mai 2025 · Skrevet av Bytteguiden-redaksjonen</div>
+</section>
+
+<div class="verdict">
+  <div class="verdict-inner">
+    <div class="verdict-side">
+      <span class="verdict-name">Viaplay</span>
+      <span class="verdict-score v">7.8</span>
+      <span class="verdict-label">Vinner på sportsdybde</span>
+    </div>
+    <div class="verdict-vs">VS</div>
+    <div class="verdict-side verdict-winner" style="text-align:right">
+      <span class="verdict-name">TV 2 Play</span>
+      <span class="verdict-score t">8.2</span>
+      <span class="verdict-label">Vinner på pris og bredde</span>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- Quick picks -->
+  <div class="quick-picks">
+    <div class="qp-card viaplay">
+      <div class="qp-tag v">Velg Viaplay hvis du...</div>
+      <div class="qp-title">Er Premier League-fan</div>
+      <div class="qp-body">Viaplay har eksklusiv Premier League til 2028. Er fotball viktigst for deg, er valget enkelt.</div>
+    </div>
+    <div class="qp-card tv2">
+      <div class="qp-tag t">Velg TV 2 Play hvis du...</div>
+      <div class="qp-title">Vil ha alt norsk</div>
+      <div class="qp-body">Eliteserie, Tour de France, norske serier og nyheter — TV 2 Play er Norges mest komplette pakke for nordmenn flest.</div>
+    </div>
+  </div>
+
+  <!-- Pris -->
+  <div class="section-h">Priser 2025</div>
+  <div class="price-grid">
+    <div class="price-card">
+      <div class="price-card-head v">
+        <div class="price-brand v">Viaplay</div>
+        <div class="price-name">Total</div>
+        <div class="price-amount">399<span> kr/mnd</span></div>
+      </div>
+      <div class="price-body">
+        <div class="price-feat">Premier League, Champions League, La Liga</div>
+        <div class="price-feat">HBO-serier og Viaplay Originals</div>
+        <div class="price-feat">Fri tale under kamper (app)</div>
+        <div class="price-feat">Ingen binding</div>
+        <div class="price-feat">1 skjerm samtidig (Total)</div>
+      </div>
+      <div class="price-footer">
+        <a href="#" class="btn-v" onclick="return false;">Prøv Viaplay →</a>
+      </div>
+    </div>
+    <div class="price-card">
+      <div class="price-card-head t">
+        <div class="price-brand t">TV 2 Play</div>
+        <div class="price-name">Premium</div>
+        <div class="price-amount">299<span> kr/mnd</span></div>
+      </div>
+      <div class="price-body">
+        <div class="price-feat">Eliteserie, Toppserien (kvinner), håndball</div>
+        <div class="price-feat">Tour de France, Ski-VM, OL</div>
+        <div class="price-feat">Norske drama- og underholdningsserier</div>
+        <div class="price-feat">TV 2 direkte + nyheter</div>
+        <div class="price-feat">Opptil 3 skjermer samtidig</div>
+      </div>
+      <div class="price-footer">
+        <a href="#" class="btn-t" onclick="return false;">Prøv TV 2 Play →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sport -->
+  <div class="section-h">Sportsrettigheter — hvem har hva?</div>
+  <table class="sport-table">
+    <thead>
+      <tr>
+        <th>Sport / liga</th>
+        <th style="color:var(--viaplay)">Viaplay</th>
+        <th style="color:var(--tv2)">TV 2 Play</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Premier League<small>Eksklusive rettigheter t.o.m. 2028</small></td>
+        <td><span class="has">✓</span></td>
+        <td><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>Champions League<small>UEFA Champions League</small></td>
+        <td><span class="has">✓</span></td>
+        <td><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>La Liga / Serie A<small>Spansk og italiensk fotball</small></td>
+        <td><span class="has">✓</span></td>
+        <td><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>Eliteserien<small>Norsk toppfotball</small></td>
+        <td><span class="no">✗</span></td>
+        <td><span class="has">✓</span></td>
+      </tr>
+      <tr>
+        <td>Toppserien (kvinner)<small>Norsk toppfotball kvinner</small></td>
+        <td><span class="no">✗</span></td>
+        <td><span class="has">✓</span></td>
+      </tr>
+      <tr>
+        <td>Tour de France<small>Og øvrige Grand Tours</small></td>
+        <td><span class="no">✗</span></td>
+        <td><span class="has">✓</span></td>
+      </tr>
+      <tr>
+        <td>Ski-VM / Skiforbundet<small>Langdistanse og hopp</small></td>
+        <td><span class="no">✗</span></td>
+        <td><span class="has">✓</span></td>
+      </tr>
+      <tr>
+        <td>Olympiske leker<small>OL vinter og sommer</small></td>
+        <td><span class="no">✗</span></td>
+        <td><span class="has">✓</span></td>
+      </tr>
+      <tr>
+        <td>NHL (ishockey)<small>Nordamerikansk ishockey</small></td>
+        <td><span class="has">✓</span></td>
+        <td><span class="no">✗</span></td>
+      </tr>
+      <tr>
+        <td>Formel 1<small>Fra 2025-sesongen</small></td>
+        <td><span class="part">Delt</span></td>
+        <td><span class="part">Delt</span></td>
+      </tr>
+      <tr>
+        <td>Handball-VM<small>Herrer og damer</small></td>
+        <td><span class="no">✗</span></td>
+        <td><span class="has">✓</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Innhold -->
+  <div class="section-h">Innhold og serier</div>
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="v">Viaplay</th>
+        <th class="t">TV 2 Play</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Egenproduserte serier</td>
+        <td class="win">Viaplay Originals (skandinaviske)</td>
+        <td class="win">Norske TV 2-produksjoner</td>
+      </tr>
+      <tr>
+        <td>Internasjonale serier</td>
+        <td class="win">HBO-serier inkludert</td>
+        <td class="lose">Begrenset utvalg</td>
+      </tr>
+      <tr>
+        <td>Norsk nyhets-TV</td>
+        <td class="lose">Nei</td>
+        <td class="win">TV 2 Nyhetskanalen direkte</td>
+      </tr>
+      <tr>
+        <td>Barn og familie</td>
+        <td class="neutral">Greit utvalg</td>
+        <td class="win">Bedre norsk barneinnhold</td>
+      </tr>
+      <tr>
+        <td>Filmer</td>
+        <td class="win">Større bibliotek</td>
+        <td class="neutral">OK utvalg</td>
+      </tr>
+      <tr>
+        <td>Offline nedlasting</td>
+        <td class="win">Ja</td>
+        <td class="win">Ja</td>
+      </tr>
+      <tr>
+        <td>4K/HDR-innhold</td>
+        <td class="win">Ja (Total+)</td>
+        <td class="neutral">Begrenset</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Fordeler/ulemper -->
+  <div class="section-h">Fordeler og ulemper</div>
+  <div class="verdict-boxes">
+    <div class="vbox">
+      <div class="vbox-label v">Viaplay — fordeler</div>
+      <div class="vbox-body">
+        Eneste sted for Premier League i Norge. Stort internasjonalt sportsbibliotek. HBO-serier inkludert i Total-pakken. Bra app-opplevelse og nedlastingsfunksjon.
+      </div>
+    </div>
+    <div class="vbox">
+      <div class="vbox-label v">Viaplay — ulemper</div>
+      <div class="vbox-body">
+        Dyrere enn konkurrentene. Ingen norske nyheter. Mangler norsk folkesport som Eliteserien og ski. Prisene har økt kraftig de siste to årene.
+      </div>
+    </div>
+    <div class="vbox">
+      <div class="vbox-label t">TV 2 Play — fordeler</div>
+      <div class="vbox-body">
+        Norges folkesport samlet på ett sted. 100 kr billigere per mnd enn Viaplay. Opptil 3 skjermer. Norske nyheter live. Ski, sykkel, OL — alt det norske.
+      </div>
+    </div>
+    <div class="vbox">
+      <div class="vbox-label t">TV 2 Play — ulemper</div>
+      <div class="vbox-body">
+        Ingen Premier League. Svakere internasjonalt serietilbud. Appen er tidvis treg under store sportsbegivenheter. Færre filmer enn Viaplay.
+      </div>
+    </div>
+  </div>
+
+  <!-- Kan du ha begge? -->
+  <div class="section-h">Kan du ha begge?</div>
+  <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:2rem">
+    <p style="font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1rem">
+      Ja — og for mange nordmenn er dette det smarteste alternativet. <strong style="color:var(--ink)">Viaplay + TV 2 Play Premium = 698 kr/mnd</strong>, som gir deg Premier League, Eliteserien, ski, sykkel og HBO-serier i én pakke.
+    </p>
+    <p style="font-size:0.9rem;color:var(--muted);line-height:1.7;margin-bottom:1rem">
+      Til sammenligning koster en TV-pakke fra Telenor eller Telia typisk 800–1 200 kr/mnd for tilsvarende innhold — pluss binding. Strømmekomboen er altså billigere <em>og</em> uten binding.
+    </p>
+    <div style="background:var(--accent-light);border-radius:var(--radius-sm);padding:1rem;font-size:0.85rem;color:var(--accent);font-weight:500">
+      💡 Tips: Vil du spare mer? Sjekk om arbeidsgiveren din tilbyr rabatt på Viaplay gjennom forsikrings- eller personalordninger — mange gjør det.
+    </div>
+  </div>
+
+  <!-- Final verdict -->
+  <div class="final-verdict">
+    <div class="fv-label">Redaksjonens konklusjon</div>
+    <div class="fv-title">For de fleste: TV 2 Play</div>
+    <div class="fv-body">
+      TV 2 Play er rett og slett bedre verdi for den gjennomsnittlige norske seeren. For 100 kr mindre per måned får du Eliteserien, ski-VM, OL, Tour de France og norske serier — altså det som engasjerer flest nordmenn. Legg til tre skjermer og live-nyheter, og det er vanskelig å argumentere mot.<br><br>
+      Er du derimot Premier League-fan og holder med et engelsk lag — er Viaplay det eneste alternativet. Og er du sportsfreak som vil ha alt, er kombinasjonen av begge tjenestene fremdeles rimeligere enn en tradisjonell TV-pakke.
+    </div>
+    <div class="fv-btns">
+      <a href="#" class="btn-t" onclick="return false;">Se TV 2 Play-tilbud →</a>
+      <a href="#" class="btn-v" onclick="return false;">Se Viaplay-tilbud →</a>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section-h">Vanlige spørsmål</div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Har Viaplay eller TV 2 Play gratis prøveperiode? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Begge tjenestene tilbyr jevnlig kampanjer med gratis prøveperiode på 14–30 dager. Sjekk alltid de offisielle sidene for aktive tilbud, da disse endres jevnlig.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Kan jeg se Premier League gratis i Norge? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Nei. Viaplay har eksklusive rettigheter til Premier League i Norge frem til 2028. Det finnes ingen lovlig gratis løsning for Premier League i Norge per i dag.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Hva skjer med min TV-pakke hvis jeg bytter til strømming? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Du kan si opp kabel-TV eller satellitt og bytte til ren strømming. Du trenger bare en rask internettforbindelse (minst 25 Mbit/s for 4K). De fleste sparer 300–600 kr per måned på å gå over til ren strømming.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Er det binding på Viaplay eller TV 2 Play? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Nei, begge tjenestene har månedlig betaling uten bindingstid. Du kan avslutte når som helst. Noen kampanjepriser kan ha kortere bindingstid — les alltid vilkårene.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFaq(this)">Hvilken tjeneste har best app? <span class="faq-icon">+</span></div>
+    <div class="faq-a">Viaplay har generelt en noe bedre app-opplevelse med mer stabil strømming. TV 2 Play-appen er god til daglig bruk, men kan henge under store live-sportsbegivenheter som EM og OL der mange ser samtidig.</div>
+  </div>
+
+</div><!-- /content -->
+
+<footer>
+  <div>
+    <div class="footer-logo">Bytteguiden</div>
+    <div style="margin-top:4px">© 2025 Bytteguiden · <a href="index.html" style="color:rgba(245,242,236,0.4);text-decoration:none">Hjem</a></div>
+  </div>
+  <div style="max-width:400px;line-height:1.5">Bytteguiden mottar affiliate-provisjon fra leverandørene. Vurderingene er redaksjonelt uavhengige.</div>
+</footer>
+
+<script>
+function toggleFaq(el) {
+  el.closest('.faq-item').classList.toggle('open');
+}
+</script>
+</body>
+</html>
